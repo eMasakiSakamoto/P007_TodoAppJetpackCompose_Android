@@ -7,7 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.free.masaki.sakamoto.todoapp.ui.screen.todoedit.TodoEditScreen
 import com.free.masaki.sakamoto.todoapp.ui.screen.todolist.TodoListScreen
+import com.free.masaki.sakamoto.todoapp.ui.screen.trash.TrashScreen
 
 object Routes {
     const val TODO_LIST = "todo_list"
@@ -42,15 +44,15 @@ fun AppNavGraph(
                 }
             )
         ) {
-//            TodoEditScreen(
-//                onBack = { navController.popBackStack() }
-//            )
+            TodoEditScreen(
+                onBack = { navController.popBackStack() }
+            )
         }
 
         composable(Routes.TRASH) {
-//            TrashScreen(
-//                onBack = { navController.popBackStack() }
-//            )
+            TrashScreen(
+                onBack = { navController.popBackStack() }
+            )
         }
     }
 }
