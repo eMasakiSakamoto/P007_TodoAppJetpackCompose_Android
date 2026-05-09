@@ -4,6 +4,7 @@ import com.free.masaki.sakamoto.todoapp.data.local.TodoDao
 import com.free.masaki.sakamoto.todoapp.data.mapper.toDomain
 import com.free.masaki.sakamoto.todoapp.data.mapper.toEntity
 import com.free.masaki.sakamoto.todoapp.domain.model.Todo
+import com.free.masaki.sakamoto.todoapp.domain.repository.TodoRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

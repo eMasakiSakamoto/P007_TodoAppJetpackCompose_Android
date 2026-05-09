@@ -1,4 +1,4 @@
-package com.free.masaki.sakamoto.todoapp.data.repository
+package com.free.masaki.sakamoto.todoapp.domain.repository
 
 import com.free.masaki.sakamoto.todoapp.domain.model.Todo
 import kotlinx.coroutines.flow.Flow

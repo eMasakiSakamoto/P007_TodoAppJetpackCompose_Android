@@ -1,6 +1,6 @@
 package com.free.masaki.sakamoto.todoapp.domain.usecase
 
-import com.free.masaki.sakamoto.todoapp.data.repository.TodoRepository
+import com.free.masaki.sakamoto.todoapp.domain.repository.TodoRepository
 import javax.inject.Inject
 
 class MoveTodoToTrashUseCase @Inject constructor(
