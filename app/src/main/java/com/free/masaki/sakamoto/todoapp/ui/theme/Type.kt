@@ -5,30 +5,44 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.Font
+import com.free.masaki.sakamoto.todoapp.R
 
-// Set of Material typography styles to start with
-val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+val HachiMaruPop = FontFamily(
+    Font(R.font.hachi_maru_pop_regular, FontWeight.Normal)
+)
+
+val AppTypography = Typography(
+    headlineLarge = TextStyle(
+        fontFamily = HachiMaruPop,
+        fontSize = 30.sp,
+        fontWeight = FontWeight.Normal
     ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
+    headlineMedium = TextStyle(
+        fontFamily = HachiMaruPop,
+        fontSize = 26.sp,
+        fontWeight = FontWeight.Normal
+    ),
+    titleLarge = TextStyle(
+        fontFamily = HachiMaruPop,
+        fontSize = 22.sp,
+        fontWeight = FontWeight.Normal
+    ),
+    titleMedium = TextStyle(
+        fontFamily = HachiMaruPop,
+        fontSize = 18.sp,
+        fontWeight = FontWeight.Normal
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = HachiMaruPop,
+        fontSize = 16.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = HachiMaruPop,
+        fontSize = 14.sp
+    ),
+    labelLarge = TextStyle(
+        fontFamily = HachiMaruPop,
+        fontSize = 14.sp
     )
-    */
 )
