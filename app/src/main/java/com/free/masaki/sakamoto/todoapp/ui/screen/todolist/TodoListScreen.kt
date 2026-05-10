@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.free.masaki.sakamoto.todoapp.R
 import com.free.masaki.sakamoto.todoapp.presentation.todolist.TodoListViewModel
+import com.free.masaki.sakamoto.todoapp.ui.common.ErrorDialog
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -43,6 +44,13 @@ fun TodoListScreen(
     viewModel: TodoListViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
+
+    if (state.showErrorDialog) {
+        ErrorDialog(
+            message = state.errorMessage,
+            onDismiss = { viewModel.dismissErrorDialog() },
+        )
+    }
 
     Scaffold(
         topBar = {

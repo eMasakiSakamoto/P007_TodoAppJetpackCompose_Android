@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.free.masaki.sakamoto.todoapp.presentation.trash.TrashViewModel
+import com.free.masaki.sakamoto.todoapp.ui.common.ErrorDialog
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -32,6 +33,13 @@ fun TrashScreen(
     viewModel: TrashViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
+
+    if (state.showErrorDialog) {
+        ErrorDialog(
+            message = state.errorMessage,
+            onDismiss = { viewModel.dismissErrorDialog() },
+        )
+    }
 
     Scaffold(
         topBar = {

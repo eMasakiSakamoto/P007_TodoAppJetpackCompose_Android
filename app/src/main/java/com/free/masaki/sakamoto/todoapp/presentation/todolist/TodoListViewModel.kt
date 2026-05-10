@@ -3,7 +3,6 @@ package com.free.masaki.sakamoto.todoapp.presentation.todolist
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.free.masaki.sakamoto.todoapp.domain.model.Todo
-import com.free.masaki.sakamoto.todoapp.domain.usecase.DeleteTodoPermanentlyUseCase
 import com.free.masaki.sakamoto.todoapp.domain.usecase.MoveTodoToTrashUseCase
 import com.free.masaki.sakamoto.todoapp.domain.usecase.ObserveTodosUseCase
 import com.free.masaki.sakamoto.todoapp.domain.usecase.ToggleTodoCompletionUseCase
@@ -25,7 +24,6 @@ data class TodoListScreenState(
 class TodoListViewModel @Inject constructor(
     private val observeTodosUseCase: ObserveTodosUseCase,
     private val moveTodoToTrashUseCase: MoveTodoToTrashUseCase,
-    private val deleteTodoPermanentlyUseCase: DeleteTodoPermanentlyUseCase,
     private val toggleTodoCompletionUseCase: ToggleTodoCompletionUseCase,
 ) : ViewModel() {
 
@@ -67,19 +65,6 @@ class TodoListViewModel @Inject constructor(
     fun onToggleCompletion(todo: Todo) {
         viewModelScope.launch {
             toggleTodoCompletionUseCase(todo)
-        }
-    }
-
-    fun deletePermanently(todoId: Long) {
-        viewModelScope.launch {
-            try {
-                deleteTodoPermanentlyUseCase(todoId)
-            } catch (e: Exception) {
-                _uiState.value = _uiState.value.copy(
-                    showErrorDialog = true,
-                    errorMessage = e.message ?: "完全削除に失敗しました",
-                )
-            }
         }
     }
 

@@ -37,7 +37,7 @@ class TodoEditViewModel @Inject constructor(
     val uiState: StateFlow<TodoEditScreenState> = _uiState
 
     init {
-        if (todoId != null) {
+        if (todoId != null && todoId != -1L) {
             loadTodo(todoId)
         }
     }
